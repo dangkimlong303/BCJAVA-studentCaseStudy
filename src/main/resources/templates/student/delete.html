@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Delete Student</h1>
+<h2>Are you sure?</h2>
+<p><a href="/student-list">Back to list</a></p>
+<form action="/studentdelete" method="post" th:object="${student}">
+
+    <input type="hidden" th:field="*{id}">
+    <table border="1">
+        <tr>
+            <td>Code:</td>
+            <td th:text="${student.code}" th:field="*{code}"></td>
+        </tr>
+        <tr>
+            <td>First Name:</td>
+            <td th:text="${student.firstName}" th:field="*{firstName}"></td>
+        </tr>
+        <tr>
+        <td>Last Name::</td>
+            <td th:text="${student.lastName}" th:field="*{lastName}"></td>
+        </tr>
+        <tr>
+            <td>address:</td>
+            <td th:text="${student.address}" th:field="*{address}"></td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+            <td th:text="${student.phoneNumber}" th:field="*{phoneNumber}"></td>
+        </tr>
+        <tr>
+            <td>Average Grade:</td>
+            <td th:text="${student.averageGrade}" th:field="*{averageGrade}"></td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td th:text="${student.status}" th:field="*{status}"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td th:text="${student.email}" th:field="*{email}"></td>
+        </tr>
+        <tr>
+            <td>Note:</td>
+            <td th:text="${student.note}" th:field="*{note}"></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td th:text="${student.description}" th:field="*{description}"></td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td th:text="${student.department.name}" th:field="*{department.name}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Delete Student"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
